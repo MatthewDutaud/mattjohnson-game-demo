@@ -30,6 +30,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     Shark.destroy()
+    projectile.destroy()
     otherSprite.startEffect(effects.disintegrate)
     mySprite.say(":)", 1000)
     info.changeScoreBy(1)
@@ -78,7 +79,7 @@ mySprite.x = 15
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 controller.moveSprite(mySprite)
 info.setScore(0)
-info.setLife(1)
+info.setLife(3)
 animation.runImageAnimation(
 mySprite,
 [img`
@@ -204,7 +205,7 @@ mySprite,
 200,
 true
 )
-game.onUpdateInterval(1000, function () {
+game.onUpdateInterval(2000, function () {
     Shark = sprites.create(img`
         .............ccfff..............
         ............cddbbf..............
