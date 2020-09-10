@@ -27,4 +27,3 @@ let mySprite = sprites.create(img`
     . . . . . . f f f f d d d c . . 
     . . . . . . . . . . c c c . . . 
     `, SpriteKind.Player)
-mySprite.flipX()
