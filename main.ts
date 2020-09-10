@@ -29,3 +29,5 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.image.flipX()
 mySprite.x = 5
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
+controller.moveSprite(mySprite)
