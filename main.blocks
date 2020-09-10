@@ -1,1 +1,10 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="H35`HZ;,00D-RarS_MBl">mySprite</variable></variables><block type="pxt-on-start" id="4u|j-a9gfdjrD;3e*gZ$" x="0" y="0"><statement name="HANDLER"><block type="gamesetbackgroundcolor" id="H,.$V;IG$2|}jUK8/JsJ"><value name="color"><shadow type="colorindexpicker" id="(!/b5Lr+YWk]iRT]vjuG"><field name="index">2</field></shadow></value><next><block type="game_control_sprite" id="z[3.#U}wToXFwVqYD7~#"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id=",hKW$46I+g2lj]4xPP/|"><field name="VAR" id="H35`HZ;,00D-RarS_MBl">mySprite</field></block></value></block></next></block></statement></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="H35`HZ;,00D-RarS_MBl">mySprite</variable></variables><block type="pxt-on-start" id="4u|j-a9gfdjrD;3e*gZ$" x="0" y="0"><statement name="HANDLER"><block type="gamesetbackgroundcolor" id="H,.$V;IG$2|}jUK8/JsJ"><value name="color"><shadow type="colorindexpicker" id="(!/b5Lr+YWk]iRT]vjuG"><field name="index">9</field></shadow></value><next><block type="tilemap_editor" id="LufAQBi34orMbgP2Ghi*"><field name="tilemap">tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040000000400000400000004000000000003030303030303030303030303030303000000000201010101010101010101010101010000000000`, img`
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5], TileScale.Sixteen)</field></block></next></block></statement></block></xml>

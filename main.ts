@@ -1,3 +1,11 @@
-let mySprite: Sprite = null
-scene.setBackgroundColor(2)
-controller.moveSprite(mySprite)
+scene.setBackgroundColor(9)
+tiles.setTilemap(tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040000000400000400000004000000000003030303030303030303030303030303000000000201010101010101010101010101010000000000`, img`
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . . . . 
+    `, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5], TileScale.Sixteen))
