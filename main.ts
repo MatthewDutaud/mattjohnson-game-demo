@@ -1,6 +1,10 @@
 namespace SpriteKind {
     export const Ghost = SpriteKind.create()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    Shark.destroy()
+    info.changeLifeBy(-1)
+})
 let Shark: Sprite = null
 scene.setBackgroundColor(9)
 tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040004060000050400070303030303030303030302010101010101010101`, img`
@@ -35,7 +39,9 @@ mySprite.image.flipX()
 mySprite.x = 15
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 controller.moveSprite(mySprite)
-game.onUpdateInterval(1000, function () {
+info.setScore(0)
+info.setLife(3)
+game.onUpdateInterval(2000, function () {
     Shark = sprites.create(img`
         .............ccfff..............
         ............cddbbf..............
@@ -55,6 +61,6 @@ game.onUpdateInterval(1000, function () {
         .............fffff..............
         `, SpriteKind.Enemy)
     Shark.setVelocity(-50, 0)
-    Shark.setPosition(160, randint(10, 100))
-    Shark.setFlag(SpriteFlag.Ghost, true)
+    Shark.setPosition(160, randint(10, 90))
+    Shark.setFlag(SpriteFlag.DestroyOnWall, true)
 })
