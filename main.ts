@@ -1,11 +1,110 @@
+enum ActionKind {
+    Walking,
+    Idle,
+    Jumping
+}
 namespace SpriteKind {
     export const Ghost = SpriteKind.create()
 }
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . c c c c . . . . 
+        . . . . . . c c d d d d c . . . 
+        . . . . . c c c c c c d c . . . 
+        . . . . c c 4 4 4 4 d c c . c c 
+        . . . c 4 d 4 4 4 4 4 1 c c 4 c 
+        . . c 4 4 4 1 4 4 4 4 d 1 c 4 f 
+        . c 4 4 4 4 1 4 4 4 4 4 1 4 4 f 
+        f 4 4 4 4 4 1 1 c f 4 4 1 f 4 f 
+        f 4 4 4 f 4 1 c 4 f 4 4 1 f 4 f 
+        f 4 4 4 4 4 1 4 4 f 4 4 d f f f 
+        . f 4 4 4 4 1 c c 4 4 d f f . . 
+        . . f f 4 d 4 4 4 4 4 c f . . . 
+        . . . . f f 4 4 4 4 c d b c . . 
+        . . . . . . f f f f d d d c . . 
+        . . . . . . . . . . c c c . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c c c . . . . 
+        . . . . . . c c d d d d c . . . 
+        . . . . . c c c c c c d c . . . 
+        . . . . c c 4 4 4 4 d c c . . . 
+        . . . c 4 d 4 4 4 4 4 1 c . c c 
+        . . c 4 4 4 1 4 4 4 4 d 1 c 4 c 
+        . c 4 4 4 4 1 4 4 4 4 4 1 c 4 c 
+        f 4 4 4 4 4 1 4 4 4 4 4 1 4 4 f 
+        f 4 4 4 f 4 1 c c 4 4 4 1 f 4 f 
+        f 4 4 4 4 4 1 4 4 f 4 4 d f 4 f 
+        . f 4 4 4 4 1 c 4 f 4 d f f f f 
+        . . f f 4 d 4 4 f f 4 c f c . . 
+        . . . . f f 4 4 4 4 c d b c . . 
+        . . . . . . f f f f d d d c . . 
+        . . . . . . . . . . c c c . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c c c . . . . 
+        . . . . . . c d d d d d c . . . 
+        . . . . . . c c c c c d c . . . 
+        . . . . . c 4 4 4 4 d c c . . . 
+        . . . . c d 4 4 4 4 4 1 c . . . 
+        . . . c 4 4 1 4 4 4 4 4 1 c . . 
+        . . c 4 4 4 4 1 4 4 4 4 1 c c c 
+        . c 4 4 4 4 4 1 c c 4 4 1 4 4 c 
+        . c 4 4 4 4 4 1 4 4 f 4 1 f 4 f 
+        f 4 4 4 4 f 4 1 c 4 f 4 d f 4 f 
+        f 4 4 4 4 4 4 1 4 f f 4 f f 4 f 
+        . f 4 4 4 4 1 4 4 4 4 c b c f f 
+        . . f f f d 4 4 4 4 c d d c . . 
+        . . . . . f f f f f c c c . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . c c c c . . . 
+        . . . . . . . c c d d d d c . . 
+        . . . . . c c c c c c d d c . . 
+        . . . c c c 4 4 4 4 d c c c c c 
+        . . c 4 4 1 4 4 4 4 4 1 c c 4 f 
+        . c 4 4 4 4 1 4 4 4 4 d 1 f 4 f 
+        f 4 4 4 4 4 1 4 4 4 4 4 1 f 4 f 
+        f 4 4 f 4 4 1 4 c f 4 4 1 4 4 f 
+        f 4 4 4 4 4 1 c 4 f 4 4 1 f f f 
+        . f 4 4 4 4 1 4 4 f 4 4 d f . . 
+        . . f 4 4 1 4 c c 4 4 d f . . . 
+        . . . f d 4 4 4 4 4 4 c f . . . 
+        . . . . f f 4 4 4 4 c d b c . . 
+        . . . . . . f f f f d d d c . . 
+        . . . . . . . . . . c c c . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `],
+    500,
+    true
+    )
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     Shark.destroy()
     info.changeLifeBy(-1)
 })
 let Shark: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040004060000050400070303030303030303030302010101010101010101`, img`
     . . . . . . . . . . 
@@ -17,7 +116,7 @@ tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000
     2 2 2 2 2 2 2 2 2 2 
     2 2 2 2 2 2 2 2 2 2 
     `, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5,sprites.builtin.coral1,sprites.builtin.coral4,sprites.builtin.coral0], TileScale.Sixteen))
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . c c c c . . . . 
     . . . . . . c c d d d d c . . . 
