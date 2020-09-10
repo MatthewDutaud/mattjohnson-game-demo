@@ -1,3 +1,4 @@
+let Shark: Sprite = null
 scene.setBackgroundColor(9)
 tiles.setTilemap(tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040000000400000400000004000000000003030303030303030303030303030303030303030201010101010101010101010101010101010101`, img`
     . . . . . . . . . . . . . . . . . . . . 
@@ -29,3 +30,25 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.image.flipX()
 mySprite.x = 5
+game.onUpdateInterval(1000, function () {
+    Shark = sprites.create(img`
+        ...........fffffff...ccfff..........
+        ..........fbbbbbbbffcbbbbf..........
+        ..........fbb111bbbbbffbf...........
+        ..........fb11111ffbbbbff...........
+        ..........f1cccc1ffbbbbbcff.........
+        ..........ffc1c1c1bbcbcbcccf........
+        ...........fcc3331bbbcbcbcccf..ccccc
+        ............c333c1bbbcbcbccccfcddbbc
+        ............c333c1bbbbbbbcccccddbcc.
+        ............c333c11bbbbbccccccbbcc..
+        ...........cc331c11bbbbccccccfbccf..
+        ...........cc13c11cbbbcccccbbcfccf..
+        ...........c111111cbbbfdddddc.fbbcf.
+        ............cc1111fbdbbfdddc...fbbf.
+        ..............cccfffbdbbfcc.....fbbf
+        ....................fffff........fff
+        `, SpriteKind.Enemy)
+    Shark.setVelocity(-50, 0)
+    Shark.setPosition(160, randint(10, 100))
+})
