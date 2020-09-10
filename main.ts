@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const Ghost = SpriteKind.create()
+}
 let Shark: Sprite = null
 scene.setBackgroundColor(9)
 scene.setBackgroundImage(img`
