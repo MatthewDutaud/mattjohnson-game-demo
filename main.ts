@@ -28,3 +28,4 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . c c c . . . 
     `, SpriteKind.Player)
 mySprite.image.flipX()
+mySprite.x = 5
