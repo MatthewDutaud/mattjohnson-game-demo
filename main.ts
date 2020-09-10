@@ -78,7 +78,7 @@ mySprite.x = 15
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 controller.moveSprite(mySprite)
 info.setScore(0)
-info.setLife(3)
+info.setLife(1)
 animation.runImageAnimation(
 mySprite,
 [img`
@@ -204,7 +204,7 @@ mySprite,
 200,
 true
 )
-game.onUpdateInterval(2000, function () {
+game.onUpdateInterval(1000, function () {
     Shark = sprites.create(img`
         .............ccfff..............
         ............cddbbf..............
