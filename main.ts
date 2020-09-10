@@ -1,6 +1,6 @@
 let Shark: Sprite = null
 scene.setBackgroundColor(9)
-tiles.setTilemap(tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040000000400000400000004000000000003030303030303030303030303030303030303030201010101010101010101010101010101010101`, img`
+tiles.setTilemap(tiles.createTilemap(hex`1400080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040004060000050400080700000004040000040003030303030303030303030303030303030303030201010101010101010101010101010101010101`, img`
     . . . . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . . . . 
@@ -9,7 +9,7 @@ tiles.setTilemap(tiles.createTilemap(hex`140008000000000000000000000000000000000
     . . . . . . . . . . . . . . . . . . . . 
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-    `, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5], TileScale.Sixteen))
+    `, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5,sprites.builtin.coral1,sprites.builtin.coral4,sprites.builtin.coral2,sprites.builtin.coral0], TileScale.Sixteen))
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . c c c c . . . . 
