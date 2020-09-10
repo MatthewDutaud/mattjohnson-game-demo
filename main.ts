@@ -45,23 +45,6 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . c c c . . . 
         `,img`
         . . . . . . . . . . . . . . . . 
-        . . . . . . . c c c c c . . . . 
-        . . . . . . c d d d d d c . . . 
-        . . . . . . c c c c c d c . . . 
-        . . . . . c 4 4 4 4 d c c . . . 
-        . . . . c d 4 4 4 4 4 1 c . . . 
-        . . . c 4 4 1 4 4 4 4 4 1 c . . 
-        . . c 4 4 4 4 1 4 4 4 4 1 c c c 
-        . c 4 4 4 4 4 1 c c 4 4 1 4 4 c 
-        . c 4 4 4 4 4 1 4 4 f 4 1 f 4 f 
-        f 4 4 4 4 f 4 1 c 4 f 4 d f 4 f 
-        f 4 4 4 4 4 4 1 4 f f 4 f f 4 f 
-        . f 4 4 4 4 1 4 4 4 4 c b c f f 
-        . . f f f d 4 4 4 4 c d d c . . 
-        . . . . . f f f f f c c c . . . 
-        . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . 
         . . . . . . . . . c c c c . . . 
         . . . . . . . c c d d d d c . . 
         . . . . . c c c c c c d d c . . 
@@ -79,20 +62,20 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . c c c . . . 
         `,img`
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c c c . . . . 
+        . . . . . . c d d d d d c . . . 
+        . . . . . . c c c c c d c . . . 
+        . . . . . c 4 4 4 4 d c c . . . 
+        . . . . c d 4 4 4 4 4 1 c . . . 
+        . . . c 4 4 1 4 4 4 4 4 1 c . . 
+        . . c 4 4 4 4 1 4 4 4 4 1 c c c 
+        . c 4 4 4 4 4 1 c c 4 4 1 4 4 c 
+        . c 4 4 4 4 4 1 4 4 f 4 1 f 4 f 
+        f 4 4 4 4 f 4 1 c 4 f 4 d f 4 f 
+        f 4 4 4 4 4 4 1 4 f f 4 f f 4 f 
+        . f 4 4 4 4 1 4 4 4 4 c b c f f 
+        . . f f f d 4 4 4 4 c d d c . . 
+        . . . . . f f f f f c c c . . . 
         . . . . . . . . . . . . . . . . 
         `],
     500,
@@ -161,5 +144,45 @@ game.onUpdateInterval(2000, function () {
         `, SpriteKind.Enemy)
     Shark.setVelocity(-50, 0)
     Shark.setPosition(160, randint(10, 90))
+    animation.runImageAnimation(
+    Shark,
+    [img`
+        .................ccfff..............
+        ................cddbbf..............
+        ...............cddbbf...............
+        .........ffffffccbbcf...............
+        ......fffbbbbbbbbcccff..............
+        .....fbbbbbbbbbbbbbbbcfff......ccccc
+        .....bcbbbbbffbcbcbbbbcccff...cdbbbc
+        .....bbb1111ffbbcbcbbbcccccffcddbbc.
+        .....fb11111111bcbcbbbcccccccbdbbf..
+        ......fccc33c11bbbbbbcccccccccbbcf..
+        .......fc131cc11bbbbccccccccffbccf..
+        ........f33c1111bbbcccccbdbc..fbbcf.
+        .........ff1111cbbbfdddddcc....fbbf.
+        ...........ccc1fbdbbfddcc.......fbbf
+        ..............ccfbdbbfc..........fff
+        .................fffff..............
+        `,img`
+        ...........fffffff...ccfff..........
+        ..........fbbbbbbbffcbbbbf..........
+        ..........fbb111bbbbbffbf...........
+        ..........fb11111ffbbbbff...........
+        ..........f1cccc1ffbbbbbcff.........
+        ..........ffc1c1c1bbcbcbcccf........
+        ...........fcc3331bbbcbcbcccf..ccccc
+        ............c333c1bbbcbcbccccfcddbbc
+        ............c333c1bbbbbbbcccccddbcc.
+        ............c333c11bbbbbccccccbbcc..
+        ...........cc331c11bbbbccccccfbccf..
+        ...........cc13c11cbbbcccccbbcfccf..
+        ...........c111111cbbbfdddddc.fbbcf.
+        ............cc1111fbdbbfdddc...fbbf.
+        ..............cccfffbdbbfcc.....fbbf
+        ....................fffff........fff
+        `],
+    200,
+    true
+    )
     Shark.setFlag(SpriteFlag.DestroyOnWall, true)
 })
