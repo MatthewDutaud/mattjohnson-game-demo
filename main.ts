@@ -7,6 +7,9 @@ enum ActionKind {
 namespace SpriteKind {
     export const Ghost = SpriteKind.create()
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     Shark.destroy()
     info.changeLifeBy(-1)
