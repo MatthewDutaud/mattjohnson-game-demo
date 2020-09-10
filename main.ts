@@ -32,7 +32,7 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . c c c . . . 
     `, SpriteKind.Player)
 mySprite.image.flipX()
-mySprite.x = 5
+mySprite.x = 15
 mySprite.setFlag(SpriteFlag.StayInScreen, false)
 controller.moveSprite(mySprite)
 game.onUpdateInterval(1000, function () {
