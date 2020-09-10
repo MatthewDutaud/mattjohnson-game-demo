@@ -7,11 +7,43 @@ enum ActionKind {
 namespace SpriteKind {
     export const Ghost = SpriteKind.create()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 6 6 6 6 . . . . . . 
+        . . . . 6 6 6 1 1 6 6 6 . . . . 
+        . . . 1 1 1 1 6 6 6 6 6 6 . . . 
+        . . 6 1 1 1 1 8 8 8 1 1 6 6 . . 
+        . . 1 1 1 1 1 8 8 8 1 1 1 6 . . 
+        . 6 1 1 1 1 8 8 8 8 8 1 1 6 6 . 
+        . 6 1 1 1 8 8 8 6 6 6 6 1 6 6 . 
+        . 6 6 1 1 8 8 6 6 6 6 6 6 6 6 . 
+        . 6 8 1 1 8 8 6 6 6 6 6 6 6 6 . 
+        . . 6 8 1 1 8 6 6 6 6 6 8 6 . . 
+        . . 6 8 8 1 8 8 6 6 6 8 6 6 . . 
+        . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+        . . . . 6 6 8 8 8 8 6 6 . . . . 
+        . . . . . . 6 6 6 6 . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite, 100, 0)
+    projectile.startEffect(effects.bubbles)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     Shark.destroy()
+    otherSprite.startEffect(effects.disintegrate)
+    mySprite.say(":)", 1000)
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    mySprite.startEffect(effects.bubbles, 1000)
+    Shark.destroy()
+    otherSprite.startEffect(effects.disintegrate)
+    mySprite.say(":(", 1000)
     info.changeLifeBy(-1)
 })
 let Shark: Sprite = null
+let projectile: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040004060000050400070303030303030303030302010101010101010101`, img`
     . . . . . . . . . . 
@@ -23,7 +55,7 @@ tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000
     2 2 2 2 2 2 2 2 2 2 
     2 2 2 2 2 2 2 2 2 2 
     `, [myTiles.transparency16,sprites.builtin.oceanSand11,sprites.builtin.oceanSand8,sprites.builtin.oceanSand2,sprites.builtin.coral5,sprites.builtin.coral1,sprites.builtin.coral4,sprites.builtin.coral0], TileScale.Sixteen))
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . b 5 5 b . . . 
